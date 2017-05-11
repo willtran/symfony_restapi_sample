@@ -1,0 +1,11 @@
+parameters:
+  database_host: db
+  database_port: 3306
+  database_name: app
+  database_user: app
+  database_password: Gadu1sag82AD
+  mailer_transport: smtp
+  mailer_host: 127.0.0.1
+  mailer_user: null
+  mailer_password: null
+  secret: 3NPHRy095HWTqE5jYcov
