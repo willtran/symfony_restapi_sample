@@ -6,6 +6,8 @@
 
 FROM centos:centos6
 
+ADD config/nexcess.repo /etc/yum.repos.d/nexcess.repo
+
 RUN yum -y update && \
     yum clean all
 

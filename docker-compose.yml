@@ -31,6 +31,8 @@ services:
     ports:
       - "8000:80"
       - "44300:443"
+    links:
+      - phpfpm
     restart: always
 
   websockets:

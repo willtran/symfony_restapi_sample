@@ -1,0 +1,7 @@
+[nexcess]
+name=Nexcess Repo
+baseurl=http://rpms.nexcess.net/el/$releasever/$basearch/
+enabled=1
+exclude=mysql* varnish*
+gpgcheck=1
+gpgkey=http://rpms.nexcess.net/RPM-GPG-KEY-NEXCESS
