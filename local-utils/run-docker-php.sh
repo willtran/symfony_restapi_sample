@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker exec -i -t symfonycrud_phpfpm_1 php $*
+docker exec -i -t symfonyrestapisample_phpfpm_1 php $*
