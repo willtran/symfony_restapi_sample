@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  db:
+    build:
+      context: docker/mysql55
+    volumes:
+      - "./.docker-volumes/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: o4Q4PV1TOvbPpgpg7Wuo
+    ports:
+      - "3307:3306"
