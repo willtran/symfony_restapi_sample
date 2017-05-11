@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.6.36, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (x86_64)
 --
 -- Host: 127.0.0.1    Database: app
 -- ------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE `articles` (
   UNIQUE KEY `articles_id_uindex` (`id`),
   KEY `articles_authors_id_fk` (`author_id`),
   CONSTRAINT `articles_authors_id_fk` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
+INSERT INTO `articles` VALUES (2,1,'First article','article-1','Article 1 content','2017-05-11 14:43:30','2017-05-11 14:43:30'),(3,1,'First article','article-1','Article 1 content','2017-05-11 14:43:32','2017-05-11 14:43:32'),(4,1,'First article','article-1','Article 1 content','2017-05-11 14:43:34','2017-05-11 14:43:34'),(5,1,'First article','article-1','Article 1 content','2017-05-11 14:43:35','2017-05-11 14:43:35'),(6,1,'First article','article-1','Article 1 content','2017-05-11 14:43:37','2017-05-11 14:43:37'),(7,1,'First article','article-1','Article 1 content','2017-05-11 14:50:44','2017-05-11 14:50:44');
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,11 +55,11 @@ DROP TABLE IF EXISTS `authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `authors` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `authors_id_uindex` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +68,7 @@ CREATE TABLE `authors` (
 
 LOCK TABLES `authors` WRITE;
 /*!40000 ALTER TABLE `authors` DISABLE KEYS */;
+INSERT INTO `authors` VALUES (1,'William'),(2,'Tran'),(3,'tung&#60;script&#62;'),(4,'tung&#60;script&#62;'),(5,'tung&#60;script&#62;'),(6,'tung&#60;script&#62;');
 /*!40000 ALTER TABLE `authors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-11 21:20:08
+-- Dump completed on 2017-05-12  0:29:33
