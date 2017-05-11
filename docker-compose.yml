@@ -11,3 +11,35 @@ services:
       MYSQL_ROOT_PASSWORD: o4Q4PV1TOvbPpgpg7Wuo
     ports:
       - "3307:3306"
+
+  phpfpm:
+    depends_on:
+      - db
+    build:
+      context: docker/phpfpm56
+    volumes:
+      - ".:/data"
+    restart: always
+
+  httpd:
+    depends_on:
+      - phpfpm
+    build:
+      context: docker/httpd
+    volumes:
+      - ".:/data"
+    ports:
+      - "8000:80"
+      - "44300:443"
+    restart: always
+
+  websockets:
+    depends_on:
+      - db
+    build:
+      context: docker/websockets
+    ports:
+      - "8080:8080"
+    volumes:
+      - ".:/data"
+    restart: always
